@@ -4,6 +4,7 @@ import com.Kmous.gestionDeStock.model.Adresse;
 
 import com.Kmous.gestionDeStock.model.Entreprise;
 import com.Kmous.gestionDeStock.model.Utilisateur;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Builder;
 import lombok.Data;
 
@@ -41,7 +42,7 @@ public class EntrepriseDTO {
 
     private String steWeb;
 
-
+    @JsonIgnore
     private List<UtilisateurDTO> utilisateursDTO;
 
     public EntrepriseDTO fromEntity(Entreprise entreprise){
