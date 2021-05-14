@@ -1,7 +1,6 @@
 package com.Kmous.gestionDeStock.dto;
 
-
-import com.Kmous.gestionDeStock.model.TypeMvtStck;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 import java.math.BigDecimal;
@@ -16,9 +15,9 @@ public class MvtStckDTO {
 
     private BigDecimal quantite;
 
-
+    @JsonIgnore
     private ArticleDTO articleDTO;
 
 
-    private TypeMvtStck typeMvt;
+
 }

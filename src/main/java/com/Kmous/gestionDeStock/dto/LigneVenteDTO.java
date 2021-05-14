@@ -1,6 +1,9 @@
 package com.Kmous.gestionDeStock.dto;
 
 
+import com.Kmous.gestionDeStock.model.LigneCommandeClient;
+import com.Kmous.gestionDeStock.model.LigneVente;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Builder;
 import lombok.Data;
 
@@ -13,7 +16,7 @@ public class LigneVenteDTO {
 
     private Integer id;
 
-
+    @JsonIgnore
     private VentesDTO ventesDTO;
 
 
@@ -21,4 +24,28 @@ public class LigneVenteDTO {
 
 
     private BigDecimal prixUnitaire;
+
+    public LigneVenteDTO fromEntity(LigneVente ligneVente){
+
+        if(ligneVente == null){
+            return null;
+        }
+
+        return LigneVenteDTO.builder()
+                .quantite(ligneVente.getQuantite())
+                .prixUnitaire(ligneVente.getPrixUnitaire())
+                .build();
+    }
+
+    public LigneVente toEntity(LigneVenteDTO ligneVenteDTO){
+
+        if (ligneVenteDTO == null){
+            return null;
+        }
+
+        LigneVente ligneVente=new LigneVente();
+        ligneVente.setQuantite(ligneVenteDTO.getQuantite());
+        ligneVente.setPrixUnitaire(ligneVenteDTO.getPrixUnitaire());
+        return ligneVente;
+    }
 }

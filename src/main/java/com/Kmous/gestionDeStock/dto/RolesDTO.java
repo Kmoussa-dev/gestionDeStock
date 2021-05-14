@@ -15,4 +15,6 @@ public class RolesDTO {
 
     private UtilisateurDTO utilisateurDTO;
 
+    public RolesDTO fromEntity()
+
 }

@@ -1,6 +1,8 @@
 package com.Kmous.gestionDeStock.dto;
 
 
+import com.Kmous.gestionDeStock.model.LigneCommandeClient;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Builder;
 import lombok.Data;
 
@@ -13,10 +15,10 @@ public class LigneCommandeClientDTO {
 
     private Integer id;
 
-
+    @JsonIgnore
     private ArticleDTO articleDTO;
 
-
+    @JsonIgnore
     private CommandeClientDTO commandeClientDTO;
 
 
@@ -24,5 +26,29 @@ public class LigneCommandeClientDTO {
 
 
     private BigDecimal prixUnitaire;
+
+    public LigneCommandeClientDTO fromEntity(LigneCommandeClient ligneCommandeClient){
+
+        if(ligneCommandeClient == null){
+            return null;
+        }
+
+        return LigneCommandeClientDTO.builder()
+                .quantite(ligneCommandeClient.getQuantite())
+                .prixUnitaire(ligneCommandeClient.getPrixUnitaire())
+                .build();
+    }
+
+    public LigneCommandeClient toEntity(LigneCommandeClientDTO ligneCommandeClientDTO){
+
+        if (ligneCommandeClientDTO == null){
+            return null;
+        }
+
+        LigneCommandeClient ligneCommandeClient=new LigneCommandeClient();
+        ligneCommandeClient.setQuantite(ligneCommandeClientDTO.getQuantite());
+        ligneCommandeClient.setPrixUnitaire(ligneCommandeClientDTO.getPrixUnitaire());
+        return ligneCommandeClient;
+    }
     
 }
