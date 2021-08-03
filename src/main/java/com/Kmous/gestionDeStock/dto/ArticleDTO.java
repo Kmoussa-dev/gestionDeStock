@@ -21,6 +21,8 @@ public class ArticleDTO {
 
     private BigDecimal prixUnivitaireHt;
 
+    private Integer tauxTVA;
+
     private BigDecimal prixUnitaireTtc;
 
     private String photo;
@@ -37,6 +39,7 @@ public class ArticleDTO {
                 .codeArticle(article.getCodeArticle())
                 .designation(article.getCodeArticle())
                 .prixUnivitaireHt(article.getPrixUnivitaireHt())
+                .tauxTVA(article.getTauxTVA())
                 .prixUnitaireTtc(article.getPrixUnitaireTtc())
                 .photo(article.getPhoto())
                 .build();
@@ -52,6 +55,7 @@ public class ArticleDTO {
         article.setCodeArticle(articleDTO.getCodeArticle());
         article.setDesignation(articleDTO.getDesignation());
         article.setPrixUnivitaireHt(articleDTO.getPrixUnivitaireHt());
+        article.setTauxTVA(articleDTO.getTauxTVA());
         article.setPrixUnitaireTtc(articleDTO.getPrixUnitaireTtc());
         article.setPhoto(articleDTO.getPhoto());
         return article;

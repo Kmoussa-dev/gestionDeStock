@@ -21,7 +21,7 @@ public class CommandeFournisseurDTO {
     private Instant dateCommande;
 
     @JsonIgnore
-    private EntrepriseDTO fournisseurDTO;
+    private FournisseurDTO fournisseurDTO;
 
     @JsonIgnore
     private List<LigneCommandeFournisseurDTO> ligneCommandeFournisseursDTO;
