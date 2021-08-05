@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface ArticleRepository extends JpaRepository<Integer, Article> {
 
-    
+
     List<Article> findByCustomQuery(String code,String designation );
     //List<Article> findByCustomQuery(@Param("code") String c,@Param("designation") String d);Requete JPQL
 
