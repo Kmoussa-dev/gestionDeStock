@@ -30,7 +30,7 @@ public class ArticleDTO {
     @JsonIgnore
     private CategoryDTO categoryDTO;
 
-    public ArticleDTO fromEntity(Article article){
+    public static ArticleDTO fromEntity(Article article){
         if(article == null){
             return null;
         }
@@ -45,7 +45,7 @@ public class ArticleDTO {
                 .build();
     }
 
-    public Article toEntity(ArticleDTO articleDTO){
+    public static Article toEntity(ArticleDTO articleDTO){
 
         if(articleDTO == null){
             return null;

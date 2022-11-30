@@ -36,7 +36,7 @@ public class ClientDTO {
     @JsonIgnore
     private List<CommandeClientDTO> commandeClientsDTO;
 
-    public ClientDTO fromEntity(Client client){
+    public static ClientDTO fromEntity(Client client){
 
         if (client == null){
             return null;
@@ -52,7 +52,7 @@ public class ClientDTO {
                 .build();
     }
 
-    public Client toEntity(ClientDTO clientDTO){
+    public static Client toEntity(ClientDTO clientDTO){
 
         if(clientDTO == null){
             return null;

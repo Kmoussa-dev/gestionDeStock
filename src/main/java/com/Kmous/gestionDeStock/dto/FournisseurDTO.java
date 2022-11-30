@@ -11,7 +11,6 @@ import java.util.List;
 
 @Data
 @Builder
-
 public class FournisseurDTO {
 
     private Integer id;
@@ -36,7 +35,7 @@ public class FournisseurDTO {
     @JsonIgnore
     private List<CommandeFournisseurDTO> commandeFournisseursDTO;
 
-    public FournisseurDTO fromEntity(Fournisseur fournisseur){
+    public static FournisseurDTO fromEntity(Fournisseur fournisseur){
 
         if(fournisseur == null){
             return null;
@@ -51,7 +50,7 @@ public class FournisseurDTO {
                 .build();
     }
 
-    public Fournisseur toEntity(FournisseurDTO fournisseurDTO){
+    public static Fournisseur toEntity(FournisseurDTO fournisseurDTO){
 
         if(fournisseurDTO == null){
             return null;

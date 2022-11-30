@@ -12,7 +12,6 @@ import java.util.List;
 
 @Data
 @Builder
-
 public class EntrepriseDTO {
 
     private Integer id;
@@ -44,7 +43,7 @@ public class EntrepriseDTO {
     @JsonIgnore
     private List<UtilisateurDTO> utilisateursDTO;
 
-    public EntrepriseDTO fromEntity(Entreprise entreprise){
+    public static EntrepriseDTO fromEntity(Entreprise entreprise){
 
         if(entreprise == null){
             return null;
@@ -62,7 +61,7 @@ public class EntrepriseDTO {
                 .build();
     }
 
-    public Entreprise toEntity(EntrepriseDTO entrepriseDTO){
+    public static Entreprise toEntity(EntrepriseDTO entrepriseDTO){
 
         if(entrepriseDTO == null){
             return null;

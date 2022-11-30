@@ -28,7 +28,7 @@ public class LigneCommandeFournisseurDTO {
 
     private BigDecimal prixUnitaire;
 
-    public LigneCommandeFournisseurDTO fromEntity(LigneCommandeFournisseur ligneCommandeFournisseur){
+    public static LigneCommandeFournisseurDTO fromEntity(LigneCommandeFournisseur ligneCommandeFournisseur){
 
         if(ligneCommandeFournisseur == null){
             return null;
@@ -40,7 +40,7 @@ public class LigneCommandeFournisseurDTO {
                 .build();
     }
 
-    public LigneCommandeFournisseur toEntity(LigneCommandeFournisseurDTO ligneCommandeFournisseurDTO){
+    public static LigneCommandeFournisseur toEntity(LigneCommandeFournisseurDTO ligneCommandeFournisseurDTO){
 
         if (ligneCommandeFournisseurDTO == null){
             return null;

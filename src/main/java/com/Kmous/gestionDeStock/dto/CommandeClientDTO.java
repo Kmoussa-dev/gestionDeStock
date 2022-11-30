@@ -27,7 +27,7 @@ public class CommandeClientDTO {
     @JsonIgnore
     private List<LigneCommandeClientDTO> ligneCommandeClientsDTO;
 
-    public CommandeClientDTO fromEntity(CommandeClient commandeClient){
+    public static CommandeClientDTO fromEntity(CommandeClient commandeClient){
 
         if(commandeClient == null){
             return null;
@@ -40,7 +40,7 @@ public class CommandeClientDTO {
 
     }
 
-    public CommandeClient toEntity(CommandeClientDTO commandeClientDTO){
+    public static CommandeClient toEntity(CommandeClientDTO commandeClientDTO){
 
         if(commandeClientDTO == null){
             return null;

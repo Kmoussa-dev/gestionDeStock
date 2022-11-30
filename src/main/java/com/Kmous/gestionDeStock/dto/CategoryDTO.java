@@ -34,7 +34,7 @@ public class CategoryDTO {
                 .build();
     }
 
-    public Category toEntity(CategoryDTO categoryDTO){
+    public static Category toEntity(CategoryDTO categoryDTO){
 
         if(categoryDTO == null){
             return null;

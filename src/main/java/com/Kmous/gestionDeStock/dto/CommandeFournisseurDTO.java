@@ -35,7 +35,7 @@ public class CommandeFournisseurDTO {
                 .dateCommande(commandeFournisseur.getDateCommande())
                 .build();
     }
-    public CommandeFournisseur toEntity(CommandeFournisseurDTO commandeFournisseurDTO){
+    public static CommandeFournisseur toEntity(CommandeFournisseurDTO commandeFournisseurDTO){
         if (commandeFournisseurDTO == null){
             return null;
         }

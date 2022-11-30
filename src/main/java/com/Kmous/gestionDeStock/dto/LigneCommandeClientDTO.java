@@ -27,7 +27,7 @@ public class LigneCommandeClientDTO {
 
     private BigDecimal prixUnitaire;
 
-    public LigneCommandeClientDTO fromEntity(LigneCommandeClient ligneCommandeClient){
+    public static LigneCommandeClientDTO fromEntity(LigneCommandeClient ligneCommandeClient){
 
         if(ligneCommandeClient == null){
             return null;
@@ -39,7 +39,7 @@ public class LigneCommandeClientDTO {
                 .build();
     }
 
-    public LigneCommandeClient toEntity(LigneCommandeClientDTO ligneCommandeClientDTO){
+    public static LigneCommandeClient toEntity(LigneCommandeClientDTO ligneCommandeClientDTO){
 
         if (ligneCommandeClientDTO == null){
             return null;
